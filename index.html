@@ -19,6 +19,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
+        /* FIX: Prevents horizontal scroll/overflow on mobile devices */
+        body { overflow-x: hidden; } 
         /* Custom scroll-padding for fixed header navigation */
         html { scroll-padding-top: 64px; }
         
@@ -52,7 +54,8 @@
         #mobile-menu a {
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-    </style>
+</style>
+
 </head>
 <body class="bg-white text-gray-800">
 
