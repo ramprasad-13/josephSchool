@@ -19,42 +19,58 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-        /* FIX: Prevents horizontal scroll/overflow on mobile devices */
-        body { overflow-x: hidden; } 
-        /* Custom scroll-padding for fixed header navigation */
-        html { scroll-padding-top: 64px; }
-        
-        /* New Color Palette: Dark Blue/Gray (#1F2937) with Cyan Accent (#06B6D4) */
-        .school-primary-dark { background-color: #1F2937; } 
-        .school-primary-text { color: #1F2937; } 
-        .school-accent-bg { background-color: #06B6D4; } 
-        .school-accent-text { color: #06B6D4; } 
-        
-        /* Font Styling */
-        body { font-family: 'Inter', sans-serif; }
-        .hero-text-shadow { text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); }
+    /* 🐛 FIX: Global rules to prevent horizontal scroll/overflow on mobile devices */
+    body { 
+        overflow-x: hidden;
+        /* Ensures the body container itself doesn't exceed viewport width */
+        width: 100vw; 
+    } 
+    /* Ensures all containers that use positioning (like our mobile menu) are contained */
+    .container {
+        overflow-x: clip; 
+    }
 
-        /* Scroll down arrow animation */
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-        .animate-bounce-custom {
-            animation: bounce 2s infinite;
-        }
+    /* Essential rule to prevent images from stretching the viewport */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 
-        /* Mobile Menu Link Separator */
-        #mobile-menu a {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* Custom scroll-padding for fixed header navigation */
+    html { scroll-padding-top: 64px; }
+    
+    /* New Color Palette: Dark Blue/Gray (#1F2937) with Cyan Accent (#06B6D4) */
+    .school-primary-dark { background-color: #1F2937; } 
+    .school-primary-text { color: #1F2937; } 
+    .school-accent-bg { background-color: #06B6D4; } 
+    .school-accent-text { color: #06B6D4; } 
+    
+    /* Font Styling */
+    body { font-family: 'Inter', sans-serif; }
+    .hero-text-shadow { text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); }
+
+    /* Scroll down arrow animation */
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
         }
-</style>
+        40% {
+            transform: translateY(-10px);
+        }
+        60% {
+            transform: translateY(-5px);
+        }
+    }
+    .animate-bounce-custom {
+        animation: bounce 2s infinite;
+    }
+
+    /* Mobile Menu Link Separator */
+    #mobile-menu a {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    </style>
+
 
 </head>
 <body class="bg-white text-gray-800">
